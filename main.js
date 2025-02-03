@@ -1,9 +1,11 @@
 const { app, BrowserWindow } = require('electron/main')
+const { read } = require('original-fs')
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600
+    width: 300,
+    height: 300,
+    frame: false
   })
 
   win.loadFile('index.html')

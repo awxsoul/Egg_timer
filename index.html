@@ -12,9 +12,29 @@
       content="default-src 'self'; script-src 'self'"
     />
     <title>egg timer</title>
+    <link rel="icon" type="image/x-icon" href="./design_assets/images/favicon_egg_timer.png">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>App here</h1>
+    <div id="page">
+      <div id="heading">
+        <img id="logo" src="./design_assets/images/logo_tittle.png" alt="egg timer logo">
+        <img id="close" src="./design_assets/images/close.png" alt="close window">
+      </div>
+      <div id="box">
+        <div id="ring" class="centre">
+          <div id="circle01" class="centre">
+            <div id="circle02" class="centre"></div>
+          </div>
+        </div>
+        <img id="threeegg" class="egg" src="./design_assets/images/3egg.png" alt="close window">
+        <img id="sixegg" class="egg" src="./design_assets/images/6egg.png" alt="close window">
+        <img id="tenegg" class="egg" src="./design_assets/images/10egg.png" alt="close window">
+        <div id="threeeggbox"></div>
+        <div id="sixeggbox"></div>
+        <div id="teneggbox"></div>
+      </div>
+    </div>
   </body>
   <script src="./renderer.js"></script>
 </html>

@@ -1,0 +1,94 @@
+:root {
+    --primary_colour: #1a1a1a;
+    --secondary_colour: #f9f9f9;
+  }
+
+body{
+    background-color: var(--secondary_colour);
+    margin: 0;
+    padding: 0;
+    background-image: url(./design_assets/ui_reference01.svg);
+    background-size: cover;
+}
+
+#page{
+    height: 300px;
+    width: 300px;
+    position: relative;
+}
+
+#heading{
+    position: absolute;
+    top: 0;
+    height: 15px;
+    width: 284px;
+    margin: 8px;
+}
+
+#logo{
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 15px;
+    aspect-ratio: auto;
+}
+
+#close{
+    position: absolute;
+    top: 10%;
+    right: 5px;
+    height: 10px;
+    aspect-ratio: auto;
+}
+
+#box{
+    position: absolute;
+    bottom: 0;
+    height: 261px;
+    width: 284px;
+    margin: 8px;
+    background-color: rgba(222, 153, 63, 0.184);
+}
+
+.centre{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+#ring{
+    height: 100%;
+    width: 100%;
+    border-radius: 0%;
+    position: absolute;
+}
+#circle01{
+    background-color: var(--secondary_colour);
+    height: 92px;
+    width: 92px;
+    left: 48%;
+}
+#circle02{
+    background-color: var(--primary_colour);
+    height: 83px;
+    width: 83px;
+    left: 50%;
+}
+
+.egg{
+    position: absolute;
+    height: 80px;
+    aspect-ratio: auto;
+}
+#threeegg{
+    top: 50%;
+    left: 30%;
+}
+#sixegg{
+
+}
+#tenegg{
+
+}
