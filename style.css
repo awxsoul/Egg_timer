@@ -3,12 +3,19 @@
     --secondary_colour: #f9f9f9;
   }
 
+@font-face {
+    font-family: 'primary_font';
+    src: url('./design_assets/font/Chelsea_Market/ChelseaMarket-Regular.ttf');
+}
+
+
 body{
-    background-color: var(--secondary_colour);
+    background-color: var(--primary_colour);
     margin: 0;
     padding: 0;
-    background-image: url(./design_assets/ui_reference01.svg);
-    background-size: cover;
+    background-image: url(./design_assets/images/background_page01.png);
+    background-size: contain;
+    background-repeat:no-repeat;
 }
 
 #page{
@@ -47,7 +54,7 @@ body{
     height: 261px;
     width: 284px;
     margin: 8px;
-    background-color: rgba(222, 153, 63, 0.184);
+    background-color: rgba(222, 153, 63, 0);
 }
 
 .centre{
@@ -81,14 +88,32 @@ body{
     position: absolute;
     height: 80px;
     aspect-ratio: auto;
+    transform: translate(-50%,-50%);
+    transition: 
+        height 0.2s,
+        top 1s,
+        left 1s;
+}
+.egg:hover{
+    height: 84px;
 }
 #threeegg{
-    top: 50%;
-    left: 30%;
+    top: 63%;
+    left: 29%;
 }
 #sixegg{
-
+    top: 26%;
+    left: 48%;
 }
 #tenegg{
-
+    top: 63%;
+    left: 67%;
+}
+#mins{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 48%;
+    font-family: 'primary_font';
+    color: var(--secondary_colour);
 }
