@@ -10,7 +10,7 @@
 
 
 body{
-    background-color: var(--primary_colour);
+    background-color: var(--secondary_colour);
     margin: 0;
     padding: 0;
     background-image: url(./design_assets/images/background_page01.png);
@@ -55,6 +55,7 @@ body{
     width: 284px;
     margin: 8px;
     background-color: rgba(222, 153, 63, 0);
+    overflow: hidden;
 }
 
 .centre{
@@ -63,6 +64,7 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     border-radius: 50%;
+    aspect-ratio: 1;
 }
 
 #ring{
@@ -71,17 +73,69 @@ body{
     border-radius: 0%;
     position: absolute;
 }
+#circle00{
+    background-color: var(--primary_colour);
+    height: 92px;
+    left: 48%;
+    transition: height 1s 0s;
+}
 #circle01{
     background-color: var(--secondary_colour);
     height: 92px;
-    width: 92px;
     left: 48%;
+    transition: height 0.5s 0s;
 }
 #circle02{
     background-color: var(--primary_colour);
     height: 83px;
-    width: 83px;
     left: 50%;
+    transition: height 0.5s 0s;
+}
+
+#bigegg{
+    height: 50px;
+    left: 48%;
+    aspect-ratio: auto;
+    opacity: 0%;
+    transition: opacity 0s 0.3s,height 1s 0.3s;
+    border-radius: 0%;
+}
+
+#time{
+    height: 50px;
+    left: 48%;
+    aspect-ratio: auto;
+    opacity: 0%;
+    transition: opacity 0s 0.35s,height 1s 0.35s;
+    border-radius: 0%;
+}
+#text{
+    color: var(--primary_colour);
+    font-family: 'primary_font';
+    font-size: 30px;
+    border-radius: 0;
+    text-align: center;
+    height: 30px;
+    width: 120px;
+    top:47%;
+    left: 48%;
+    opacity: 0%;
+    transition: opacity 0.3s 1s;
+}
+
+#end{
+    background-color: var(--primary_colour);
+    color: var(--secondary_colour);
+    font-family: 'primary_font';
+    font-size: 20px;
+    border-radius: 12px;
+    text-align: center;
+    height: 30px;
+    width: 80px;
+    top:62%;
+    left: 48%;
+    opacity: 0%;
+    transition: opacity 0.3s 1s;
 }
 
 .egg{
@@ -89,10 +143,6 @@ body{
     height: 80px;
     aspect-ratio: auto;
     transform: translate(-50%,-50%);
-    transition: 
-        height 0.2s,
-        top 1s,
-        left 1s;
 }
 .egg:hover{
     height: 84px;
@@ -100,14 +150,17 @@ body{
 #threeegg{
     top: 63%;
     left: 29%;
+    transition: height 0.2s 0s, top 1s 0s, left 1s 0s;
 }
 #sixegg{
     top: 26%;
     left: 48%;
+    transition: height 0.2s 0s, top 1s 0s, left 1s 0s;
 }
 #tenegg{
     top: 63%;
     left: 67%;
+    transition: height 0.2s 0s, top 1s 0s, left 1s 0s;
 }
 #mins{
     position: absolute;
@@ -116,4 +169,5 @@ body{
     left: 48%;
     font-family: 'primary_font';
     color: var(--secondary_colour);
+    transition: opacity 0.3s 0s;
 }
