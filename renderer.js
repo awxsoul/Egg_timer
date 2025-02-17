@@ -1,5 +1,18 @@
 console.log("working")
+const { ipcRenderer } = require('electron')
 
+const close = document.getElementById("close")
+close.onclick=()=>{
+    ipcRenderer.send('close');
+}
+
+const alarm= new Audio("./design_assets/sounds/beep.wav")
+const start= new Audio("./design_assets/sounds/start.wav")
+const back= new Audio("./design_assets/sounds/back.wav")
+alarm.loop=true;
+start.volume=0.1;
+back.volume=0.05;
+let a=false;
 const threeegg=document.getElementById("threeegg");
 const sixegg=document.getElementById("sixegg");
 const tenegg=document.getElementById("tenegg");
@@ -15,6 +28,7 @@ let timer
 let texttimer
 
 const go=()=>{
+    back.currentTime = 0;
     threeegg.style.top="50%";
     threeegg.style.left="48%";
     sixegg.style.top="50%";
@@ -121,7 +135,12 @@ const textclock=(t)=>{
     m=t-1
     s=60
     texttimer=setInterval(()=>{
-        if(m==0 && s==0){text.innerHTML="0m 0s";clearTimeout(texttimer)}
+        if(m==0 && s==0){
+            text.innerHTML="0m 0s";
+            clearTimeout(texttimer);
+            alarm.play()
+            a=true
+        }
         else{
             if(s==0){s=59;m-=1;}
             else{s-=1}
@@ -131,7 +150,25 @@ const textclock=(t)=>{
 }
 
 
-threeegg.onclick=()=>{go();clock(3);textclock(3)}
-sixegg.onclick=()=>{go();clock(6);textclock(6)}
-tenegg.onclick=()=>{go();clock(10);textclock(10)}
-end.onclick=()=>{clearTimeout(texttimer);clearTimeout(timer);comeback()}
+threeegg.onclick=()=>{
+    start.currentTime = 0;start.play();
+    go();clock(1);textclock(1)}
+sixegg.onclick=()=>{
+    start.currentTime = 0;start.play();
+    go();clock(6);textclock(6)}
+tenegg.onclick=()=>{
+    start.currentTime = 0;start.play();
+    go();clock(10);textclock(10)}
+end.onclick=()=>{
+    back.currentTime = 0;
+    back.play()
+    console.log("back")
+    clearTimeout(texttimer)
+    clearTimeout(timer)
+    if(a){
+        alarm.pause();
+        alarm.currentTime = 0;
+        a=false;
+    }
+    comeback()
+}

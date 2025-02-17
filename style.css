@@ -16,6 +16,7 @@ body{
     background-image: url(./design_assets/images/background_page01.png);
     background-size: contain;
     background-repeat:no-repeat;
+    user-select: none;
 }
 
 #page{
@@ -28,8 +29,9 @@ body{
     position: absolute;
     top: 0;
     height: 15px;
-    width: 284px;
+    width: 267px;
     margin: 8px;
+    -webkit-app-region: drag;
 }
 
 #logo{
@@ -41,11 +43,13 @@ body{
 }
 
 #close{
+    z-index: 10px;
     position: absolute;
-    top: 10%;
-    right: 5px;
-    height: 10px;
-    aspect-ratio: auto;
+    padding: 2px;
+    top: 8px;
+    right: 8px;
+    height: 11px;
+    aspect-ratio: 1;
 }
 
 #box{

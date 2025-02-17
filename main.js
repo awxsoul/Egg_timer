@@ -1,15 +1,26 @@
-const { app, BrowserWindow } = require('electron/main')
+
+const { app, BrowserWindow, ipcMain } = require('electron')
 const { read } = require('original-fs')
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 300,
     height: 300,
-    frame: false
+    frame: false,
+    resizable: false,
+    webPreferences:{
+      nodeIntegration: true,
+      contextIsolation:false //for close
+    } 
   })
-
+  win.setAlwaysOnTop(true, 'screen');
   win.loadFile('index.html')
+  win.isAlwaysOnTop(true);
 }
+
+ipcMain.on('close',()=>{
+  app.quit();
+}) ;
 
 app.whenReady().then(() => {
   createWindow()
