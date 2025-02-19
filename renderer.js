@@ -152,7 +152,7 @@ const textclock=(t)=>{
 
 threeegg.onclick=()=>{
     start.currentTime = 0;start.play();
-    go();clock(1);textclock(1)}
+    go();clock(3);textclock(3)}
 sixegg.onclick=()=>{
     start.currentTime = 0;start.play();
     go();clock(6);textclock(6)}

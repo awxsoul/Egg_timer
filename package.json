@@ -1,15 +1,33 @@
 {
   "name": "egg_timer",
+  "productName": "Egg Timer",
   "version": "1.0.0",
   "description": "Egg Timer Application",
   "main": "main.js",
   "scripts": {
-    "start":"electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "package-win": "electron-packager . Egg_Timer --platform=win32 --arch=x64 --asar --icon=design_assets/images/egg_timer.ico --out=dist --overwrite",
+    "package-mac": "electron-packager . Egg_Timer --platform=darwin --arch=x64 --asar --icon=design_assets/images/egg_timer.icns --out=dist --overwrite",
+    "package-mac-in": "electron-packager . Egg_Timer --platform=darwin --arch=x64 --icon=design_assets/images/egg_timer.icns --out=dist --overwrite --app-bundle-id=com.awsoul.eggtimer --sign=awxsoul "
   },
   "author": "awxsoul",
   "license": "ISC",
   "devDependencies": {
+    "@electron-forge/cli": "^7.7.0",
+    "@electron-forge/maker-deb": "^7.7.0",
+    "@electron-forge/maker-rpm": "^7.7.0",
+    "@electron-forge/maker-squirrel": "^7.7.0",
+    "@electron-forge/maker-zip": "^7.7.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.7.0",
+    "@electron-forge/plugin-fuses": "^7.7.0",
+    "@electron/fuses": "^1.8.0",
     "electron": "^34.0.2"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.1"
   }
+  
 }
